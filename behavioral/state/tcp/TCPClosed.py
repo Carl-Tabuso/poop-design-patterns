@@ -1,11 +1,15 @@
+from typing import TYPE_CHECKING
 from TCPState import TCPState
-from TCPListen import TCPListen
+
+if TYPE_CHECKING:
+    from TCPConnection import TCPConnection
 
 class TCPClosed(TCPState):
-    def __init__(self, connection) -> None:
+    def __init__(self, connection: TCPConnection) -> None:
         self.connection = connection
 
     def open(self) -> None:
+        from TCPListen import TCPListen
         self.connection.set_state(TCPListen(self.connection))
 
     def __str__(self) -> str:
