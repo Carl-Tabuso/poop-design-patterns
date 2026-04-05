@@ -2,11 +2,11 @@ from MotifWidgetFactory import MotifWidgetFactory
 from PresentationManagerWidgetFactory import PresentationManagerWidgetFactory
 
 if __name__ == "__main__":
-    motif_window = MotifWidgetFactory.create_window()
-    motif_scrollbar = MotifWidgetFactory.create_scrollbar()
+    motif_window = MotifWidgetFactory().create_window()
+    motif_scrollbar = MotifWidgetFactory().create_scrollbar()
 
-    pm_window = PresentationManagerWidgetFactory.create_window()
-    pm_scrollbar = PresentationManagerWidgetFactory.create_scrollbar()
+    pm_window = PresentationManagerWidgetFactory().create_window()
+    pm_scrollbar = PresentationManagerWidgetFactory().create_scrollbar()
 
     # Motif
     print(motif_window.render())

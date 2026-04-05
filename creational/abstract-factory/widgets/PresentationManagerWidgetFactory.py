@@ -1,14 +1,17 @@
+from typing import TYPE_CHECKING
 from WidgetFactory import WidgetFactory
 from PresentationManagerScrollbar import PresentationManagerScrollbar
 from PresentationManagerWindow import PresentationManagerWindow
 
+if TYPE_CHECKING:
+    from Scrollbar import Scrollbar
+    from Window import Window
+
 class PresentationManagerWidgetFactory(WidgetFactory):
-    @staticmethod
-    def create_scrollbar() -> PresentationManagerScrollbar:
+    def create_scrollbar(self) -> Scrollbar:
         return PresentationManagerScrollbar()
 
-    @staticmethod
-    def create_window() -> PresentationManagerWindow:
+    def create_window(self) -> Window:
         return PresentationManagerWindow()
     
     def __str__(self) -> str:

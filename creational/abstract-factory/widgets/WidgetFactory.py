@@ -1,14 +1,17 @@
+from typing import TYPE_CHECKING
 from abc import ABC, abstractmethod
 
+if TYPE_CHECKING:
+    from Scrollbar import Scrollbar
+    from Window import Window
+
 class WidgetFactory(ABC):
-    @staticmethod
     @abstractmethod
-    def create_scrollbar():
+    def create_scrollbar(self) -> Scrollbar:
         pass
 
-    @staticmethod
     @abstractmethod
-    def create_window():
+    def create_window(self) -> Window:
         pass
 
     def __str__(self) -> str:

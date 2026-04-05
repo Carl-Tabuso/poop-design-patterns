@@ -1,15 +1,18 @@
+from typing import TYPE_CHECKING
 from WidgetFactory import WidgetFactory
 from MotifScrollbar import MotifScrollbar
 from MotifWindow import MotifWindow
 
+if TYPE_CHECKING:
+    from Scrollbar import Scrollbar
+    from Window import Window
+
 class MotifWidgetFactory(WidgetFactory):
-    @staticmethod
-    def create_scrollbar() -> MotifScrollbar:
+    def create_scrollbar(self) -> Scrollbar:
         return MotifScrollbar()
     
-    @staticmethod
-    def create_window() -> MotifWindow:
+    def create_window(self) -> Window:
         return MotifWindow()
-    
+
     def __str__(self) -> str:
         return "MotifWidgetFactory"
