@@ -14,9 +14,9 @@ def create_furnitures(furniture_factory: FurnitureFactory) -> Dict[str, object]:
         "coffee_table": furniture_factory.create_coffee_table(),
     }
 
-def display_furnitures(furnitures: dict) -> None:
+def display_furnitures(furnitures: Dict[str, object]) -> None:
     for key, value in furnitures.items():
-        furniture = str(key).capitalize().replace("_", " ")
+        furniture = key.capitalize().replace("_", " ")
 
         print(f"{furniture}: {value}")
 
